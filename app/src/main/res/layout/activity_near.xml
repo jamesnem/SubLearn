@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NearActivity"
+    android:gravity="center_horizontal">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".NearActivity"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/buttonNear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#00FFFFFF"
+                android:src="@drawable/home"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias=".03"
+                app:layout_constraintVertical_bias=".02"
+                tools:layout_editor_absoluteX="346dp"
+                tools:layout_editor_absoluteY="16dp"
+                android:contentDescription="@string/go_to_settings" />
+
+            <TextView
+                android:id="@+id/titleNear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/archivo_black"
+                android:text="Safe Suburbs Near Me"
+                android:textColor="#000000"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@id/contextNear"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintVertical_bias="0.26"
+                android:layout_marginBottom="40dp"/>
+
+            <TextView
+                android:id="@+id/contextNear"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="60dp"
+                android:fontFamily="sans-serif"
+                android:text="Enter a Victorian suburb name to display a list of the 5 closest suburbs ordered from safest to least safe."
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/inputNear"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/titleNear"
+                />
+
+            <EditText
+                android:id="@+id/inputNear"
+                android:layout_width="350dp"
+                android:layout_height="44dp"
+                android:layout_marginBottom="30dp"
+                android:autofillHints="no"
+                android:ems="10"
+                android:hint="Enter Suburb Name"
+                android:inputType="textPersonName"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/buttonNear2"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/contextNear" />
+
+            <Button
+                android:id="@+id/buttonNear2"
+                android:layout_width="174dp"
+                android:layout_height="66dp"
+                android:text="Search"
+                android:textColor="#FFF72F"
+                android:textSize="20sp"
+                app:backgroundTint="#000000"
+                app:layout_constraintTop_toBottomOf="@id/inputNear"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/valueNear"
+                android:layout_marginBottom="40dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/nearList"
+                android:layout_width="350dp"
+                android:layout_height="250dp"
+                android:background="#00FFFFFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttonNear2"
+                tools:listitem="@layout/nearme"
+                />
+            <TextView
+                android:id="@+id/valueNear"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="@string/result_Statistic"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/buttonNear2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

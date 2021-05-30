@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SafetyTipsFragment"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/buttonSafety"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FFFFFF"
+            android:src="@drawable/home"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias=".03"
+            app:layout_constraintVertical_bias=".02"
+            tools:layout_editor_absoluteX="346dp"
+            tools:layout_editor_absoluteY="16dp"/>
+
+        <TextView
+            android:id="@+id/titleSafety"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/archivo_black"
+            android:text="Safe Driving Tips"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@id/tip1Safety"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:layout_constraintVertical_bias="0.25"
+            android:layout_marginBottom="40dp"
+            />
+
+        <TextView
+            android:id="@+id/tip1Safety"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="Ensure to always be aware of changing speed limits around school zones."
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/tip2Safety"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleSafety"
+            android:layout_marginBottom="25dp"/>
+        <TextView
+            android:id="@+id/tip2Safety"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="Avoid tailgating to prevent avoidable car accidents if a driver in front of you hits their breaks abruptly."
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/tip3Safety"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tip1Safety"
+            android:layout_marginBottom="25dp"/>
+        <TextView
+            android:id="@+id/tip3Safety"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="Slow down during extreme weather events as the roads become more hazardous."
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@id/tip4Safety"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tip2Safety"
+            android:layout_marginBottom="25dp"/>
+        <TextView
+            android:id="@+id/tip4Safety"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="Make sure to always look before reversing, and don't always rely on technology."
+            android:textColor="#000000"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tip3Safety"
+            android:layout_marginBottom="25dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

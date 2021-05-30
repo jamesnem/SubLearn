@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "718105036971",
+    "project_id": "sublearn-17962",
+    "storage_bucket": "sublearn-17962.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:718105036971:android:c17fbd94c3b9868e2d8fee",
+        "android_client_info": {
+          "package_name": "com.example.sublearn"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "718105036971-q1rs0tonme1avgj7alftde45aor8vrtq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcCi4qQVyiupc9PZjYMjmfai3XIHw4KL0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "718105036971-q1rs0tonme1avgj7alftde45aor8vrtq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

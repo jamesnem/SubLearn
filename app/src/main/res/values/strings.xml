@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">sublearn</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="third_fragment_label">Third Fragment</string>
+    <string name="fourth_fragment_label">Fourth Fragment</string>
+    <string name="fifth_fragment_label">Fifth Fragment</string>
+    <string name="sixth_fragment_label">Sixth Fragment</string>
+    <string name="seventh_fragment_label">Seventh Fragment</string>
+    <string name="eighth_fragment_label">Eighth Fragment</string>
+
+
+    <string name="sublearn">SubLearn</string>
+    <string name="string_sublearn">SubLearn</string>
+    <string name="login">LOGIN</string>
+    <string name="new_to_sublearn">New to SubLearn?</string>
+    <string name="logo">Logo</string>
+    <string name="todo">SubLearn logo</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="create_sublearn_account">Create SubLearn account</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="name">Name</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+    <string name="search_by_suburb">Search By Suburb</string>
+    <string name="record_suburbs_driven">Record Suburbs Driven</string>
+    <string name="safe_suburbs_near_me">Safe Suburbs Near Me</string>
+    <string name="enter_suburb_name">Enter Suburb Name</string>
+    <string name="search">Search</string>
+    <string name="suburb_name">Suburb Name</string>
+    <string name="search_by_suburb2">Search by Suburb</string>
+    <string name="home">home</string>
+    <string name="searchsuburb">search</string>
+    <string name="go_to_settings">go to settings</string>
+    <string name="enter_you_password">Enter you password</string>
+    <string name="enter_your_first_name">Enter your first name</string>
+    <string name="enter_your_email">Enter your email</string>
+    <string name="enter_a_password">Enter a password</string>
+    <string name="back">back</string>
+    <string name="create">Create</string>
+    <string name="log_out">Log Out</string>
+    <string name="safe_driving_tips">Safe Driving Tips</string>
+    <string name="rubberText1"><b>Perceived Safety Rating: %1$d/10</b></string>
+    <string name="_0_recorded_suburbs">0 Recorded Suburbs</string>
+    <string name="welcome">Welcome <b><i>%1$s</i></b></string>
+    <string name="hello">Hello</string>
+    <string name="context_record">Log suburbs driven to keep a record of road safety conditions</string>
+    <string name="result_Statistic">Please enter a suburb.</string>
+
+
+</resources>
