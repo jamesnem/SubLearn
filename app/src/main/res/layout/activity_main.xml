@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        android:src="@drawable/background" />
+        android:src="@drawable/updatebackground" />
 
     <include layout="@layout/content_main" />
 

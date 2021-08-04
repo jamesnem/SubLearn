@@ -19,14 +19,14 @@
             android:background="#00FFFFFF"
             android:contentDescription="@string/back"
             android:src="@drawable/home"
-            app:layout_constraintBottom_toTopOf="@id/titleSettings"
-            app:layout_constraintHorizontal_bias=".03"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias=".07"
-            app:layout_constraintVertical_chainStyle="packed"
-            android:layout_marginBottom="25dp"/>
+            app:layout_constraintHorizontal_bias=".03"
+            app:layout_constraintVertical_bias=".02"
+            tools:layout_editor_absoluteX="346dp"
+            tools:layout_editor_absoluteY="16dp"/>
 
         <TextView
             android:id="@+id/titleSettings"
@@ -34,50 +34,74 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/archivo_black"
             android:text="Settings"
-            android:textColor="#000000"
+            android:textColor="#252525"
             android:textSize="24sp"
             app:layout_constraintBottom_toTopOf="@id/contentSettings"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/buttonSettings"
-            android:layout_marginBottom="30dp"/>
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="70dp"
+            />
+
         <TextView
             android:id="@+id/contentSettings"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:text="SubLearn has been created to increase awareness of crash statistics, specific to Victoria. SubLearn draws its statistical analysis from a dataset provided by Data Vic."
             android:fontFamily="sans-serif"
+            android:text="Change account name"
+            android:textColor="#252525"
             android:textSize="18sp"
-            app:layout_constraintTop_toBottomOf="@id/titleSettings"
-            app:layout_constraintBottom_toTopOf="@id/buttonSettings2"
+            app:layout_constraintBottom_toTopOf="@id/changeName"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginBottom="40dp"/>
+            app:layout_constraintTop_toBottomOf="@id/titleSettings"
+            android:layout_marginTop="60dp"/>
+
+        <EditText
+            android:id="@+id/changeName"
+            android:layout_width="350dp"
+            android:layout_height="39dp"
+            android:autofillHints="no"
+            android:ems="10"
+            android:hint="Enter new name"
+            android:inputType="textPersonName"
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@id/contentSettings"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/updateNameButton"
+            android:layout_marginTop="10dp"
+            />
+
+        <Button
+            android:id="@+id/updateNameButton"
+            android:layout_width="174dp"
+            android:layout_height="66dp"
+            android:text="Change"
+            android:textColor="#FFF85B"
+            android:textSize="20sp"
+            app:backgroundTint="#252525"
+            app:layout_constraintTop_toBottomOf="@id/changeName"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/buttonSettings2"
+            android:layout_marginTop="30dp"/>
+
         <Button
             android:id="@+id/buttonSettings2"
             android:layout_width="174dp"
             android:layout_height="66dp"
             android:text="@string/log_out"
+            android:textColor="#FFF85B"
             android:textSize="20sp"
-            android:textColor="#FFF72F"
-            app:backgroundTint="#000000"
-            app:layout_constraintBottom_toTopOf="@id/imageSettings"
+            app:backgroundTint="#252525"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/contentSettings"
-            android:layout_marginBottom="100dp"/>
+            app:layout_constraintTop_toBottomOf="@id/updateNameButton"
+            android:layout_marginTop="200dp"
+            />
 
-        <ImageView
-            android:id="@+id/imageSettings"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:src="@drawable/bye"
-            tools:layout_editor_absoluteX="55dp"
-            tools:layout_editor_absoluteY="371dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/buttonSettings2"/>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

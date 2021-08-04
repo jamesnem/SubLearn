@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        android:src="@drawable/background" />
+        android:src="@drawable/updatebackground" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -46,31 +46,27 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/archivo_black"
                 android:text="@string/record_suburbs_driven"
-                android:textColor="#000000"
+                android:textColor="#252525"
                 android:textSize="24sp"
                 app:layout_constraintBottom_toTopOf="@id/contextRecord"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_chainStyle="packed"
-                android:layout_marginTop="80dp"
-                android:layout_marginBottom="35dp"
-                />
+                android:layout_marginTop="70dp"/>
 
             <TextView
+                android:id="@+id/contextRecord"
                 android:layout_width="350dp"
                 android:layout_height="49dp"
-                android:text="@string/context_record"
-                android:textColor="#000000"
-                android:textSize="20sp"
                 android:fontFamily="sans-serif"
+                android:text="@string/context_record"
+                android:textColor="#252525"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@id/inputRecord"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintBottom_toTopOf="@id/inputRecord"
                 app:layout_constraintTop_toBottomOf="@id/titleRecord"
-                android:layout_marginBottom="20dp"
-                android:id="@+id/contextRecord"
-                />
+                android:layout_marginTop="40dp"/>
 
             <EditText
                 android:id="@+id/inputRecord"
@@ -85,13 +81,12 @@
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/contextRecord"
                 app:layout_constraintBottom_toTopOf="@id/rubberSeek"
-                android:layout_marginBottom="25dp"/>
+                android:layout_marginTop="20dp"/>
 
             <com.jem.rubberpicker.RubberSeekBar
                 android:id="@+id/rubberSeek"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
-                android:layout_marginBottom="10dp"
                 app:dampingRatio="0.3"
                 app:defaultThumbInsideColor="#FFF"
                 app:defaultThumbRadius="16dp"
@@ -103,6 +98,7 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/inputRecord"
+                android:layout_marginTop="10dp"
                 app:maxValue="10"
                 app:minValue="0"
                 app:normalTrackColor="#AAAAAA"
@@ -120,7 +116,8 @@
                 app:layout_constraintBottom_toTopOf="@id/buttonRecord2"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rubberSeek" />
+                app:layout_constraintTop_toBottomOf="@id/rubberSeek"
+                android:layout_marginTop="10dp"/>
 
 
             <Button
@@ -128,25 +125,25 @@
                 android:layout_width="174dp"
                 android:layout_height="66dp"
                 android:text="Record"
-                android:textColor="#FFF72F"
+                android:textColor="#FFF85B"
                 android:textSize="20sp"
-                app:backgroundTint="#000000"
+                app:backgroundTint="#252525"
                 app:layout_constraintBottom_toTopOf="@id/userList"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/rubberSeek"
-                />
+                android:layout_marginTop="10dp"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/userList"
                 android:layout_width="350dp"
-                android:layout_height="250dp"
+                android:layout_height="200dp"
                 android:background="#00FFFFFF"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/buttonRecord2"
                 tools:listitem="@layout/user_item"
+                android:layout_marginTop="40dp"
                 />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

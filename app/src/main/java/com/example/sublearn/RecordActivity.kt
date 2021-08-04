@@ -2,16 +2,15 @@ package com.example.sublearn
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
-import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.github.doyaaaaaken.kotlincsv.dsl.csvReader
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.jem.rubberpicker.RubberSeekBar
+import java.io.InputStream
 
 class RecordActivity : AppCompatActivity() {
 
@@ -49,19 +48,36 @@ class RecordActivity : AppCompatActivity() {
 
                 //Identify button to store edit view values to firebase on button click
                 findViewById<Button>(R.id.buttonRecord2).setOnClickListener {
-
                     //Identify user inputs and convert to string
                     val enteredSuburb = findViewById<EditText>(R.id.inputRecord)
-                    val recordedSuburb = enteredSuburb.text.toString()
+                    val recordedSuburb = enteredSuburb.text.toString().toLowerCase()
                     val recordedValue = value.toString()
 
-                    //Store a reference of the users unique id to use as key in database
-                    val user = FirebaseAuth.getInstance().currentUser!!.uid
-                    database.child(user.toString()).child("data").push().setValue(RecordData(recordedSuburb, recordedValue))
+                    val inputStream: InputStream = assets.open("complete_data.csv")
+                    var check = false
 
-                    //Remove users suburb input from edit view
-                    enteredSuburb.setText("")
+                    csvReader().open(inputStream) {
+                        for (row: List<String> in readAllAsSequence()) {
+                            if (row[0].toLowerCase() == recordedSuburb) {
 
+                                //Store a reference of the users unique id to use as key in database
+                                val user = FirebaseAuth.getInstance().currentUser!!.uid
+                                database.child(user).child("data").push()
+                                    .setValue(RecordData(recordedSuburb, recordedValue))
+
+                                //Remove users suburb input from edit view
+                                enteredSuburb.setText("")
+
+                                //Check to return error message
+                                check = true
+                                Toast.makeText(this@RecordActivity, "Suburb added", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                        if (!check) {
+                            enteredSuburb.error = "Please enter a Victorian suburb"
+                            enteredSuburb.requestFocus()
+                        }
+                    }
                 }
             }
             override fun onStartTrackingTouch(seekBar: RubberSeekBar) {}
@@ -86,9 +102,10 @@ class RecordActivity : AppCompatActivity() {
         dbref.addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
 
+                userArrayList.clear()
                 for (userSnapshot in snapshot.children){
-                    val user = userSnapshot.getValue(Safety::class.java)
-                    userArrayList.add(user!!)
+                    val userSnap = userSnapshot.getValue(Safety::class.java)
+                    userArrayList.add(userSnap!!)
                 }
                 userRecyclerview.adapter = myAdapater(userArrayList)
             }

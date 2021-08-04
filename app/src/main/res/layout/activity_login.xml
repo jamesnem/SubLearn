@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scaleType="centerCrop"
-        android:src="@drawable/background" />
+        android:src="@drawable/updatebackground" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -40,12 +40,12 @@
 
             <TextView
                 android:id="@+id/textView_title"
-                android:layout_width="195dp"
+                android:layout_width="180dp"
                 android:layout_height="82dp"
-                android:fontFamily="@font/archivo_black"
+                android:fontFamily="@font/droid_sans_bold"
                 android:text="SubLearn"
-                android:textColor="#000000"
-                android:textSize="37sp"
+                android:textColor="#252525"
+                android:textSize="39sp"
                 app:layout_constraintBottom_toTopOf="@+id/UserEmail"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
@@ -84,9 +84,9 @@
                 android:layout_height="66dp"
                 android:layout_marginTop="30dp"
                 android:text="@string/login"
-                android:textColor="#FFF72F"
+                android:textColor="#FFF85B"
                 android:textSize="24sp"
-                app:backgroundTint="#040404"
+                app:backgroundTint="#252525"
                 app:layout_constraintBottom_toTopOf="@+id/textCreate"
                 app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintLeft_toLeftOf="parent"

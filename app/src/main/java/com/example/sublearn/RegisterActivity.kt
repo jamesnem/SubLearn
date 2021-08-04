@@ -31,6 +31,7 @@ class RegisterActivity : AppCompatActivity() {
         //Identify user inputs as edit views
         val emailTxt = findViewById<View>(R.id.makeEmail) as EditText
         val passTxt = findViewById<View>(R.id.makePassword) as EditText
+        val userName = findViewById<EditText>(R.id.createName)
 
 
         //Identify button to create account on button click
@@ -64,8 +65,7 @@ class RegisterActivity : AppCompatActivity() {
                                 //Get user ID
                                 val firebaseUser: FirebaseUser = task.result!!.user!!
 
-                                //Write user name to Firebase withtin its appropriate user ID
-                                val userName = findViewById<EditText>(R.id.createName)
+                                //Write user name to Firebase within its appropriate user ID
                                 val inputName = userName.text.toString()
                                 val id = firebaseUser.uid
                                 database.child(id.toString()).setValue(Users(inputName))

@@ -12,77 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/title_greeting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/archivo_black"
-            android:text="@string/welcome"
-            android:textColor="#000000"
-            android:textSize="24sp"
-            app:layout_constraintBottom_toTopOf="@id/buttonSafe"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias=".4"
-            app:layout_constraintVertical_chainStyle="packed" />
-
-        <Button
-            android:id="@+id/buttonSafe"
-            android:layout_width="286dp"
-            android:layout_height="66dp"
-            android:layout_marginTop="60dp"
-            android:text="@string/safe_suburbs_near_me"
-            android:textColor="#FFF72F"
-            android:textSize="20sp"
-            app:backgroundTint="#000000"
-            app:layout_constraintBottom_toTopOf="@id/buttonSearch"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/title_greeting" />
-
-        <Button
-            android:id="@+id/buttonSearch"
-            android:layout_width="286dp"
-            android:layout_height="66dp"
-            android:layout_marginTop="60dp"
-            android:text="@string/search_by_suburb"
-            android:textColor="#FFF72F"
-            android:textSize="20sp"
-            app:backgroundTint="#000000"
-            app:layout_constraintBottom_toTopOf="@id/buttonRecord"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/buttonSafe" />
-
-        <Button
-            android:id="@+id/buttonRecord"
-            android:layout_width="286dp"
-            android:layout_height="66dp"
-            android:layout_marginTop="60dp"
-            android:text="@string/record_suburbs_driven"
-            android:textColor="#FFF72F"
-            android:textSize="20sp"
-            app:backgroundTint="#000000"
-            app:layout_constraintBottom_toTopOf="@id/buttonTips"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/buttonSearch" />
-
-        <Button
-            android:id="@+id/buttonTips"
-            android:layout_width="286dp"
-            android:layout_height="66dp"
-            android:layout_marginTop="60dp"
-            android:text="@string/safe_driving_tips"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            app:backgroundTint="#FFF72F"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/buttonRecord" />
-
         <ImageButton
             android:id="@+id/buttonHometoSettings"
             android:layout_width="wrap_content"
@@ -98,6 +27,75 @@
             tools:layout_editor_absoluteX="346dp"
             tools:layout_editor_absoluteY="16dp"
             android:contentDescription="@string/go_to_settings" />
+
+        <TextView
+            android:id="@+id/title_greeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/archivo_black"
+            android:text="@string/welcome"
+            android:textColor="#252525"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@id/buttonSafe"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="70dp" />
+
+        <Button
+            android:id="@+id/buttonSafe"
+            android:layout_width="286dp"
+            android:layout_height="66dp"
+            android:text="@string/safe_suburbs_near_me"
+            android:textColor="#FFF85B"
+            android:textSize="20sp"
+            app:backgroundTint="#252525"
+            app:layout_constraintBottom_toTopOf="@id/buttonSearch"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/title_greeting"
+            android:layout_marginTop="40dp"/>
+
+        <Button
+            android:id="@+id/buttonSearch"
+            android:layout_width="286dp"
+            android:layout_height="66dp"
+            android:text="@string/search_by_suburb"
+            android:textColor="#FFF85B"
+            android:textSize="20sp"
+            app:backgroundTint="#252525"
+            app:layout_constraintBottom_toTopOf="@id/buttonRecord"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonSafe"
+            android:layout_marginTop="60dp"/>
+
+        <Button
+            android:id="@+id/buttonRecord"
+            android:layout_width="286dp"
+            android:layout_height="66dp"
+            android:text="@string/record_suburbs_driven"
+            android:textColor="#FFF85B"
+            android:textSize="20sp"
+            app:backgroundTint="#252525"
+            app:layout_constraintBottom_toTopOf="@id/buttonTips"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonSearch"
+            android:layout_marginTop="60dp"/>
+
+        <Button
+            android:id="@+id/buttonTips"
+            android:layout_width="286dp"
+            android:layout_height="66dp"
+            android:text="@string/safe_driving_tips"
+            android:textColor="#252525"
+            android:textSize="20sp"
+            app:backgroundTint="#FFF85B"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/buttonRecord"
+            android:layout_marginTop="60dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

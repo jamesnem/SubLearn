@@ -33,28 +33,32 @@ class NearActivity : AppCompatActivity() {
 
             //Get users input and convert to a string
             val suburb = findViewById<EditText>(R.id.inputNear)
-            val userSuburb = suburb.text.toString()
+            val userSuburb = suburb.text.toString().toLowerCase()
             val returnText = findViewById<TextView>(R.id.valueNear)
 
             //Create a function that uses the haversine formula and will return a double
             fun haversine(lat1: Double, lon1: Double, lat2: Double, lon2: Double): Double {
 
                 //Kilometers
+                //Convert to 2 decimals places
                 val R = 6372.8
                 val val1 = toRadians(lat1)
                 val val2 = toRadians(lat2)
                 val val3 = toRadians(lat2 - lat1)
                 val val4 = toRadians(lon2 - lon1)
-                return 2 * R * asin(sqrt(pow(sin(val3 / 2), 2.0) + pow(sin(val4 / 2), 2.0) * cos(val1) * cos(val2)))
+                val final =  2 * R * asin(sqrt(pow(sin(val3 / 2), 2.0) + pow(sin(val4 / 2), 2.0) * cos(val1) * cos(val2)))
+                return round(final * 100) / 100.0
             }
 
+            var check = false
             //Read through .csv file and iterate through each line
             //If iterated row index 0 is equal to users input display closest, else return an error
-            val inputStream: InputStream = assets.open("crash_data.csv")
+            val inputStream: InputStream = assets.open("complete_data.csv")
             csvReader().open(inputStream) {
                 for (row: List<String> in readAllAsSequence()){
-                    if (row[0] == userSuburb){
+                    if (row[0].toLowerCase() == userSuburb){
 
+                        check = true
                         //Store iterated index positions as coordinates
                         val currentLong = row[1].toDouble()
                         val currentLat = row[2].toDouble()
@@ -62,7 +66,7 @@ class NearActivity : AppCompatActivity() {
                         //Create lists that will be used to stored data
                         val namesList : MutableList<String> = mutableListOf()
                         val statsList : MutableList<Double> = mutableListOf()
-                        val crashList : MutableList<Double> = mutableListOf()
+                        val crashList : MutableList<Int> = mutableListOf()
 
                         //Loop through .csv file data again to find distances between users suburb and all suburbs
                         for (coordinates: List<String> in readAllAsSequence()) {
@@ -71,16 +75,16 @@ class NearActivity : AppCompatActivity() {
                             val distances = haversine(currentLat, currentLong, otherLat, otherLong)
 
                             //Append the values to the corresponding lists
-                            statsList.add(distances)
                             namesList.add(coordinates[0])
-                            crashList.add(coordinates[3].toDouble())
+                            statsList.add(distances)
+                            crashList.add(coordinates[3].toInt())
                         }
 
                         //Use zip to pair the lists together to retain index positions after sorting
                         val matchedList = namesList.zip(statsList)
                         val secMatchedList = matchedList.zip(crashList)
                         val sortedList = secMatchedList.sortedBy { it.first.second }
-                        var top5List : MutableList<Pair<Pair<String, Double>, Double>> = mutableListOf()
+                        var top5List : MutableList<Pair<Pair<String, Double>, Int>> = mutableListOf()
 
                         //Loop over the sorted list 5 times to return 5 closest suburbs
                         var count : Int = 0
@@ -109,12 +113,14 @@ class NearActivity : AppCompatActivity() {
                         data.layoutManager = LinearLayoutManager(this@NearActivity)
                         data.setHasFixedSize(true)
                         break
-                    }
 
-                    //Display error message
-                    else{
-                        returnText.text = "${userSuburb} is not a valid Victorian suburb"
+                        
                     }
+                }
+                //Display error message
+                if (!check) {
+                    suburb.error = "Please enter a Victorian suburb"
+                    suburb.requestFocus()
                 }
             }
         }
