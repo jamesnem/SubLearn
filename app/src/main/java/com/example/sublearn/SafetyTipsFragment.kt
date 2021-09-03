@@ -22,7 +22,7 @@ class SafetyTipsFragment : Fragment() {
 
         //Identify button to navigate from this activity to welcome fragment on button click
         view.findViewById<ImageButton>(R.id.buttonSafety).setOnClickListener {
-            findNavController().navigate(R.id.action_FifthFragment_to_FirstFragment)
+            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
         }
     }
 }

@@ -1,49 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/FirstFragment">
 
     <fragment
+        android:id="@+id/SplashFragment"
+        android:name="com.example.sublearn.WelcomeFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_welcome">
+        <action
+            android:id="@+id/action_SplashFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment"
+            />
+    </fragment>
+
+    <fragment
         android:id="@+id/FirstFragment"
         android:name="com.example.sublearn.WelcomeFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_welcome">
-
         <action
-            android:id="@+id/action_FirstFragment_to_FifthFragment"
-            app:destination="@id/FifthFragment"
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment"
             />
         <action
-            android:id="@+id/action_FirstFragment_to_SixthFragment"
-            app:destination="@id/SixthFragment"
+            android:id="@+id/action_FirstFragment_to_ThirdFragment"
+            app:destination="@id/ThirdFragment"
             />
     </fragment>
 
-
-
     <fragment
-        android:id="@+id/FifthFragment"
+        android:id="@+id/SecondFragment"
         android:name="com.example.sublearn.SafetyTipsFragment"
-        android:label="@string/fifth_fragment_label"
+        android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_safety_tips">
         <action
-            android:id="@+id/action_FifthFragment_to_FirstFragment"
+            android:id="@+id/action_SecondFragment_to_FirstFragment"
             app:destination="@id/FirstFragment"
             />
     </fragment>
 
     <fragment
-        android:id="@+id/SixthFragment"
+        android:id="@+id/ThirdFragment"
         android:name="com.example.sublearn.SettingsFragment"
-        android:label="@string/sixth_fragment_label"
+        android:label="@string/third_fragment_label"
         tools:layout="@layout/fragment_settings">
         <action
-            android:id="@+id/action_SixthFragment_to_FirstFragment"
+            android:id="@+id/action_ThirdFragment_to_FirstFragment"
             app:destination="@id/FirstFragment"
             />
     </fragment>
-
-
 </navigation>

@@ -24,7 +24,7 @@ class WelcomeFragment : Fragment() {
         //Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_welcome, container, false)
     }
-
+    
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -57,10 +57,10 @@ class WelcomeFragment : Fragment() {
             startActivity(Intent(activity, RecordActivity::class.java))
         }
         view.findViewById<Button>(R.id.buttonTips).setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_FifthFragment)
+            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
         view.findViewById<ImageButton>(R.id.buttonHometoSettings).setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SixthFragment)
+            findNavController().navigate(R.id.action_FirstFragment_to_ThirdFragment)
         }
     }
 }

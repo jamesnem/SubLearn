@@ -28,7 +28,7 @@ class SettingsFragment : Fragment() {
 
         //Identify button to navigate from this activity to welcome fragment on button click
         view.findViewById<ImageButton>(R.id.buttonSettings).setOnClickListener {
-            findNavController().navigate(R.id.action_SixthFragment_to_FirstFragment)
+            findNavController().navigate(R.id.action_ThirdFragment_to_FirstFragment)
         }
 
         view.findViewById<Button>(R.id.updateNameButton).setOnClickListener {

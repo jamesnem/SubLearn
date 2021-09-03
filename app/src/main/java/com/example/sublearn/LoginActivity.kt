@@ -49,7 +49,7 @@ class LoginActivity : AppCompatActivity() {
                     val email: String = emailTxt.text.toString().trim {it <= ' ' }
                     val password: String = passTxt.text.toString().trim{it <= ' '}
 
-                    //Validate whether users email and password matched to any exisitng accounts
+                    //Validate whether users email and password matched to any existing accounts
                     FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener({ task ->
                             if (task.isSuccessful) {
