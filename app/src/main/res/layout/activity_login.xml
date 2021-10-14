@@ -87,6 +87,7 @@
                 android:textColor="#FFF85B"
                 android:textSize="24sp"
                 app:backgroundTint="#252525"
+                app:cornerRadius="25dp"
                 app:layout_constraintBottom_toTopOf="@+id/textCreate"
                 app:layout_constraintHorizontal_bias="0.502"
                 app:layout_constraintLeft_toLeftOf="parent"

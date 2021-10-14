@@ -99,16 +99,16 @@
                 android:id="@+id/makeAccount"
                 android:layout_width="174dp"
                 android:layout_height="66dp"
+                android:layout_marginTop="50dp"
                 android:fontFamily="sans-serif-medium"
                 android:text="@string/create"
                 android:textColor="#FFF85B"
                 android:textSize="24sp"
                 app:backgroundTint="#252525"
-                android:layout_marginTop="50dp"
+                app:cornerRadius="25dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/makePassword"
-                />
+                app:layout_constraintTop_toBottomOf="@+id/makePassword" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
